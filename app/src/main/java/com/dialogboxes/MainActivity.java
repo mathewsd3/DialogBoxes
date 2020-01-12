@@ -23,7 +23,12 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements TimePickerFragment.TimePickerListener{
+public class MainActivity extends AppCompatActivity implements TimePickerFragment.TimePickerListener, ExampleDialog.ExampleDialogListener{
+
+    //Custom Dialog
+    private TextView textViewUsername;
+    private TextView textViewPassword;
+    private Button button;
 
     //Progress Dialog
     Button b1, b2;
@@ -206,7 +211,29 @@ public class MainActivity extends AppCompatActivity implements TimePickerFragmen
                 }).start();
             }
         });
+
+        //Custom Dialog
+        textViewUsername = (TextView) findViewById(R.id.textview_username);
+        textViewPassword = (TextView) findViewById(R.id.textview_password);
+        button = (Button) findViewById(R.id.buttoncustomd);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
+
     }
 
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
+    }
+
+    @Override
+    public void applyTexts(String username, String password) {
+        textViewUsername.setText(username);
+        textViewPassword.setText(password);
+    }
 
 }

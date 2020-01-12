@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="10dp"
         android:text="date"
         android:textSize="30sp" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:hint="Select Date"
         android:id="@+id/tvDate"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"/>
 
@@ -76,4 +76,41 @@
         android:textColor="@android:color/background_dark"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textview_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:text="here will be our username"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textview_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_username"
+            android:gravity="center_horizontal"
+            android:text="here will be our password"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/buttoncustomd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_password"
+            android:layout_centerHorizontal="true"
+            android:text="open dialog" />
+
+    </LinearLayout>
+
 </LinearLayout>
